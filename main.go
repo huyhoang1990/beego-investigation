@@ -40,7 +40,7 @@ func main() {
 			UserRepo: userRepo,
 		}
 		homeController := controllers.NewHomeController(baseController)
-		authController := controllers.NewAuthenticationController(baseController, authService)
+		authController := controllers.NewAuthenticationController(*baseController, authService)
 
 		web.Router(conf.HOME_PATH, homeController, "get:Home")
 		web.Router(conf.LOGIN_PATH, authController, "post:Login;get:Login")

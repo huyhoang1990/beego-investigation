@@ -10,7 +10,7 @@ import (
 )
 
 func NewAuthenticationController(
-	baseController *BaseController,
+	baseController BaseController,
 	authService service.AuthService,
 ) *AuthenticationController {
 	return &AuthenticationController{
@@ -20,7 +20,7 @@ func NewAuthenticationController(
 }
 
 type AuthenticationController struct {
-	*BaseController
+	BaseController
 	AuthService service.AuthService
 }
 
